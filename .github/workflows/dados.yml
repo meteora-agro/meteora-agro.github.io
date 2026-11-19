@@ -1,0 +1,32 @@
+name: Dados
+# Rotina horaria gratuita: importa INMET/Open-Meteo, calcula ETo, balanco e graus-dia, previsao e avisos.
+# Segredos do repositorio (Settings > Secrets and variables > Actions):
+#   FIREBASE_SERVICE_ACCOUNT  conteudo do JSON da conta de servico (Firebase > Configuracoes > Contas de servico)
+#   ADMIN_EMAILS              e-mail(s) dos administradores do app, separados por virgula
+#   INMET_TOKEN               opcional: token da API do INMET (sem ele, usa o modelo Open-Meteo no mesmo ponto)
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+concurrency: dados
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: codigo-fonte
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci --prefix job --omit=dev
+      - name: Importar e calcular
+        env:
+          FIREBASE_PROJECT_ID: meteora-agro
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          ADMIN_EMAILS: ${{ secrets.ADMIN_EMAILS }}
+          INMET_TOKEN: ${{ secrets.INMET_TOKEN }}
+        run: node job/importar.mjs
