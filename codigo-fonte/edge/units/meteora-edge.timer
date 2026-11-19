@@ -1,0 +1,11 @@
+[Unit]
+Description=Meteora Edge a cada 5 minutos
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+RandomizedDelaySec=20
+Persistent=true
+
+[Install]
+WantedBy=timers.target

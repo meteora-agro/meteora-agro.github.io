@@ -1,0 +1,10 @@
+desktop.ini
+node_modules/
+.firebase/
+*.log
+__pycache__/
+# credenciais NUNCA vao para o repositorio
+*service-account*.json
+*-adminsdk-*.json
+chave*.json
+edge.conf

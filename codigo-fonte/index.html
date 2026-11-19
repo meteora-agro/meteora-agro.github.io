@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meteora Agro</title>
+<meta name="description" content="Tempo, previsao, ETo, irrigacao e avisos para a sua lavoura. Rede publica de estacoes em Mato Grosso.">
+<meta name="theme-color" content="#2e7d32">
+<link rel="icon" href="/icone.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<!-- Arquivo GERADO por codigo-fonte/build.py: edite os fontes em codigo-fonte/, nao este arquivo. -->
+<style>/*LEAFLET_CSS*/</style>
+<style>/*VELOCITY_CSS*/</style>
+<style>/*APP_CSS*/</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#2e7d32"/><circle cx="21" cy="11" r="4.5" fill="#ffd54f"/><path d="M5 24c4-7 8-10 11-10s7 3 11 10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+  <symbol id="i-casa" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-nuvem" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/></symbol>
+  <symbol id="i-painel" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></symbol>
+  <symbol id="i-folha" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19c3-4 6-6 9-8"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-vento" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/></symbol>
+  <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></symbol>
+  <symbol id="i-usuario" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-sinal" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-alvo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+</svg>
+
+<div class="abertura" id="abertura"><div class="marca"><svg><use href="#i-logo"/></svg>Meteora <b>Agro</b></div></div>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#/"><svg><use href="#i-logo"/></svg>Meteora <b>Agro</b></a>
+    <nav class="nav" id="nav"></nav>
+    <div class="conta">
+      <button class="btn prim peq" id="btn-entrar">Entrar</button>
+      <button class="avatar" id="btn-conta" hidden title="Minha conta"></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="pagina" data-pagina="/"></section>
+  <section class="pagina" data-pagina="/mapa"></section>
+  <section class="pagina" data-pagina="/previsao"></section>
+  <section class="pagina" data-pagina="/painel"></section>
+  <section class="pagina" data-pagina="/historico"></section>
+  <section class="pagina" data-pagina="/irrigacao"></section>
+  <section class="pagina" data-pagina="/relatorio"></section>
+  <section class="pagina" data-pagina="/fazenda"></section>
+  <section class="pagina" data-pagina="/admin"></section>
+  <section class="pagina" data-pagina="/conta"></section>
+  <section class="pagina" data-pagina="/aguardando"></section>
+</main>
+
+<footer class="rodape">Meteora Agro · dados da rede INMET e do modelo Open-Meteo · avisos indicativos, nao substituem a avaliacao agronomica no campo</footer>
+
+<nav class="barra-inf" id="barra-inf"></nav>
+
+<dialog id="dlg-auth">
+  <div class="dlg">
+    <div class="dlg-cab"><div class="marca"><svg><use href="#i-logo"/></svg>Meteora <b>Agro</b></div><button class="btn fantasma peq" data-fechar aria-label="Fechar"><svg class="i"><use href="#i-x"/></svg></button></div>
+    <div class="motivo" id="auth-motivo" hidden></div>
+    <div class="abas"><button data-aba="entrar" class="on">Entrar</button><button data-aba="criar">Criar conta</button></div>
+    <form id="f-entrar" class="pilha">
+      <label>E-mail<input type="email" id="en-email" autocomplete="username" required></label>
+      <label>Senha<input type="password" id="en-senha" autocomplete="current-password" required></label>
+      <button class="btn prim">Entrar</button>
+      <a href="#" id="en-esqueci" class="peq">Esqueci a senha</a>
+      <div class="erro" id="en-erro"></div>
+    </form>
+    <form id="f-criar" class="pilha" hidden>
+      <label>Seu nome<input id="cr-nome" maxlength="80" required autocomplete="name"></label>
+      <label>E-mail<input type="email" id="cr-email" autocomplete="username" required></label>
+      <label>Senha (minimo 8)<input type="password" id="cr-senha" minlength="8" autocomplete="new-password" required></label>
+      <button class="btn prim">Criar conta gratis</button>
+      <p class="suave peq">Um administrador aprova o cadastro. O plano gratis inclui 1 propriedade e 2 estacoes.</p>
+      <div class="erro" id="cr-erro"></div>
+    </form>
+  </div>
+</dialog>
+
+<dialog id="dlg" class="largo"><div class="dlg" id="dlg-corpo"></div></dialog>
+<script>/*LEAFLET_JS*/</script>
+<script>/*VELOCITY_JS*/</script>
+<script>/*CHART_JS*/</script>
+<script type="module">/*APP_JS*/</script>
+</body>
+</html>

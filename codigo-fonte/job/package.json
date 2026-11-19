@@ -1,0 +1,20 @@
+{
+  "name": "meteora-job",
+  "private": true,
+  "type": "module",
+  "description": "Job horario (GitHub Actions) e testes do nucleo cientifico",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "importar": "node importar.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.5.1"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "firebase": "^13.4.0"
+  }
+}

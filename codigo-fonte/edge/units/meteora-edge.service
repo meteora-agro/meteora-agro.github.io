@@ -1,0 +1,13 @@
+[Unit]
+Description=Meteora Edge - envia as medicoes para o Firebase
+Wants=network-online.target
+After=network-online.target time-sync.target
+
+[Service]
+Type=oneshot
+User=pi
+ExecStart=/usr/bin/python3 /opt/meteora-edge/meteora_edge.py
+Environment=METEORA_EDGE_ESTADO=/var/lib/meteora-edge/estado.json
+StateDirectory=meteora-edge
+SuccessExitStatus=1
+Nice=10

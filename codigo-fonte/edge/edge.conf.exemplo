@@ -1,0 +1,10 @@
+# /etc/meteora/edge.conf  (chmod 600; NUNCA versionar este arquivo)
+# O app gera este arquivo pronto em Fazenda > Nova estacao (tipo Sensor) ou "Novo login".
+METEORA_PROJETO=seu-projeto
+METEORA_API_KEY=chave-web-do-projeto
+METEORA_ESTACAO=ID_DA_ESTACAO
+METEORA_EMAIL=estacao-xxxx@estacoes.meteora-agro.app
+METEORA_SENHA=senha-gerada-pelo-app
+# Onde o coletor grava os CSVs e o prefixo dos arquivos (padrao: nome do host)
+METEORA_DADOS=/home/pi/dados
+#METEORA_PREFIXO=Meteora
